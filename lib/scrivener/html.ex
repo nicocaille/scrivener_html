@@ -152,7 +152,7 @@ defmodule Scrivener.HTML do
   defp _pagination_links(paginator, [view_style: :bootstrap_v4, path: path, args: args, page_param: page_param, params: params]) do
     url_params = Keyword.drop params, Keyword.keys(@raw_defaults)
     content_tag :nav, "aria-label": "Page navigation" do
-      content_tag :ul, class: "pagination" do
+      content_tag :ul, class: "pagination pagination-sm justify-content-center" do
         raw_pagination_links(paginator, params)
         |> Enum.map(&page(&1, url_params, args, page_param, path, paginator, :bootstrap_v4))
       end
